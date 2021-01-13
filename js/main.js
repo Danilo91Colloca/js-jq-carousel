@@ -17,9 +17,6 @@ $(document).ready(
       $('i.active')
       .removeClass('active')
       .next().addClass('active');
-
-
-
    })
 
    $('.prev').click(
@@ -48,10 +45,34 @@ $(document).ready(
       }
   });
 
+/*++++++++++++++++cliccare sui pallini e cambiare img+++++++++++*/
+  $('.nav :first-child').click(function(){
+    $('.nav i').removeClass('active')
+    $('.images img').removeClass('active')
+    $(this).addClass('active');
+    $('.images :first-child').addClass('active')
+  })
 
+  $('.nav > i:nth-child(2)').click(function(){
+    $('.nav i').removeClass('active')
+    $('.images img').removeClass('active')
+    $(this).addClass('active');
+    $('.images img:nth-child(2)').addClass('active')
+  })
 
-
-
+  $('.nav > i:nth-child(3)').click(function(){
+    $('.nav i').removeClass('active')
+    $('.images img').removeClass('active')
+    $(this).addClass('active');
+    $('.images img:nth-child(3)').addClass('active')
+  })
+  
+  $('.nav > i:nth-child(4)').click(function(){
+    $('.nav i').removeClass('active')
+    $('.images img').removeClass('active')
+    $(this).addClass('active');
+    $('.images img:nth-child(4)').addClass('active')
+  })
 
 
 
