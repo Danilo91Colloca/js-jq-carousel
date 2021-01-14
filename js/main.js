@@ -8,26 +8,39 @@ $(document).ready(
     });
 
 /*+++++++++++cambio foto cliccando sulle frecce con mouse++++++++++++++*/
-    $('.next').click(//quando clicco sull'elemento con class 'next'
-      function(){
-   /* selezionoImgClassActive. rimuovoClass'active'. passoAll'elementoPiùVicino. aggiungoClassActive*/
-      $('img.active')
-      .removeClass('active')
-      .next().addClass('active');
-      $('i.active')
-      .removeClass('active')
-      .next().addClass('active');
-   })
 
-   $('.prev').click(
-     function(){
-       $('img.active')
-       .removeClass('active')
-       .prev().addClass('active')
-       $('i.active')
-       .removeClass('active')
-       .prev().addClass('active');;
-   })
+
+
+  $('.prev').click(
+    function(){
+      if ($('img.active, i.active').hasClass('first')) {
+
+        $('img.active, i.active').removeClass('active');
+        $('img.last, i.last').addClass('active');
+
+      } else{
+        $('img.active, i.active')
+          .removeClass('active')
+          .prev().addClass('active')
+      }
+  })
+
+  $('.next').click(
+    function(){
+      if ($('img.active, i.active').hasClass('last')) {
+
+        $('img.active, i.active').removeClass('active');
+        $('img.first, i.first').addClass('active');
+
+      } else{
+        $('img.active, i.active')
+          .removeClass('active')
+          .next().addClass('active')
+      }
+  })
+
+
+
 
 
 
@@ -75,14 +88,6 @@ $(document).ready(
     $(this).addClass('active');
     $('.images img:nth-child(4)').addClass('active')
   })
-
-
-
-
-
-
-
-
 
 
 })//chiusura ready
